@@ -1,3 +1,15 @@
-# Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+  
+  #显示信息
+  def notice_message
+    if flash[:notice_success]
+      result = "<div id=\"success_message\" class=\"successMessage\">#{flash[:notice_success]}</div>"
+    elsif flash[:notice_error]
+      result = "<div id=\"error_explanation\" class=\"errorExplanation\">#{flash[:notice_error]}</div>"
+    else
+      result = ''
+    end
+    return result
+  end
+
 end

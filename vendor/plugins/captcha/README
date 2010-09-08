@@ -16,6 +16,9 @@ Using Captcha is a five step process
 The plugin has been tested on OS X 10.5 using ImageMagick @6.4.1-8_0+q16 (via MacPorts) and
 the rmagick 2.5.2 gem.
 
+== Demo
+ 
+http://pasite.org/login
 
 == Install RMagic
 
@@ -76,6 +79,12 @@ FILE_FORMAT    - the file type of the captcha image (png or gif)
 In your forms all you need to do is:
 
   <%= captcha_block %>
+
+Auto skip captcha when validated:
+
+	<% if captcha_skip? %>
+  	<%= captcha_block %>
+	<% end %>
 
 And add a little bit of CSS styling to get a nice looking captcha validation text field 
 and image. If you don't like the way it's setup then use the other helper methods 

@@ -1,0 +1,15 @@
+/*base*/
+body {background-color: #fff;font-family:"Microsoft YaHei";font-size:12px;color:#333;}
+a:link, a:active, a:visited {text-decoration: none;color: #336699;cursor: auto;font-size: 12px;}
+a:hover {color: #333;;text-decoration: none;}
+p {font-size:12px;line-height: 160%;}
+h1,h2,h3,h4,h5,h6 {font-weight:400; color:#333;}
+h1 {font-size:24px;}
+h2 {font-size:22px;}
+h3 {font-size:20px;}
+h4 {font-size:18px;}
+h5 {font-size:16px;}
+h6 {font-size:14px;}
+form {margin:10px 0;}
+div.errorExplanation {margin:10px;padding:10px;border:1px solid #D82801;background-color:#FFDACE;color:#D82801;letter-spacing: 1px;}
+

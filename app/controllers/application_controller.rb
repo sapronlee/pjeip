@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery 
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
+  before_filter :require_user, :except => [:login, :login_user] #登录
+  before_filter :auth_permission, :except => [:login, :login_user] #权限
 
 
   private
@@ -47,17 +49,12 @@ class ApplicationController < ActionController::Base
      session[:return] = nil
    end
   
-   #初始化设置
-   def init_settings
-     $settings = Setting.find(:all).to_hash   
-   end
-   
    #设置页面标题,关键字,描述
    def set_seo_meta(title, keywords='', description='')
      if title
-       @page_title = "#{title} | #{$settings["web_name"]}"
+       @page_title = "#{title} | #{Setting.web_name}"
      else
-       @page_title = "#{$settings["web_name"]}"
+       @page_title = "#{Setting.web_name}"
      end
      @keywords = keywords
      @description = description
@@ -82,6 +79,7 @@ class ApplicationController < ActionController::Base
     save_notice(notice, false)
   end
   
+  # 权限验证
   def auth_permission
     user_permissions = current_user.permissions
     unless user_permissions.detect { |p| p.controller == controller_name && p.action == action_name}

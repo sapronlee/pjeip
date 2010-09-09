@@ -1,0 +1,30 @@
+body {background-color:#fcf5e0;font-family:"Microsoft YaHei";font-size:12px;}
+
+h1,h2,h3,h4,h5,h6 {font-weight:400;color:#333;}
+h1 {font-size:26px;line-height:1;}
+h2 {font-size:2em;}
+h3 {font-size:1.5em;}
+h4 {font-size:1.2em;}
+h5 {font-size:1em;}
+h6 {font-size:1em;}
+
+a:link, a:active, a:visited {text-decoration:none;color:#333;cursor::auto;font-size:12px;}
+a:hover {text-decoration:none;color:#336699;}
+
+#header {width:100%;margin:0;padding:0;background:#336699 url(/images/cpanel/header_bg.jpg) repeat-x;}
+  #header #top {height:80px;padding:0 10px;overflow:hidden;}
+    #top #logo {margin-top:15px;height:40px;width:369px;}
+    #top #nav {height:25px;}
+      #nav ul {height:25px;overflow:hidden;float:right;}
+        #nav ul li {float:left;background-color:#000;margin-left:6px;height:25px;}
+          #nav ul li a {display:block;padding:7px 10px 6px 10px;color:#FFF;}
+          #nav ul li a:hover {background-color:#FFF;color:#000;}
+          #nav ul li a.current {background-color:#FFF;color:#000;}
+  #header #sub_col {height:30px;background-color:#000;border-bottom:1px #999 solid;color:#FFF;overflow:hidden;}
+    #sub_col .inner {width:960px;margin:0 auto;position:relative;height:30px;}
+      #sub_col #current_time, #sub_col #current_user {position:absolute;top:9px;}
+      #sub_col #current_user {right:0px;}
+        #current_user a {color:#336699;padding-left:3px;}
+        #current_user a:hover {background-color:#FFF;}
+
+

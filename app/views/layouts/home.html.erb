@@ -2,11 +2,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml"> 
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>EIP首页 | Ytrip</title>
-    <%= yield :styles %>
-    <%= yield :scripts %>
+    <title><%= @page_title unless @page_title.blank? %></title>
+		<% unless @keywords.blank? %>
+			<meta name="keywords" content="<%= @keywords %>" /> 
+		<% end -%>
+		<% unless @description.blank? %>
+			<meta name="description" content="<%= @description %>" /> 
+    <% end -%>
+    <%= stylesheet_link_tag "src/lib/960/reset", "src/lib/960/960", "src/base" %>
+    <%= yield :styles -%>
+    <%= javascript_include_tag "src/lib/jquery/jquery-1.4.2" %>
+    <%= yield :scripts -%>
   </head>
   <body>
-    <%= yield :main %>
+    <%= yield -%>
   </body>
 </html>

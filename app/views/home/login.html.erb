@@ -1,0 +1,18 @@
+<% content_for :styles do -%>
+  <%= stylesheet_link_tag "src/home/login" %>
+<% end -%>
+<div id="top_div"></div>
+<div id="login">
+  <h1>用户登录</h1>
+  <%= notice_message -%>
+  <% form_for @user_session, :url => login_user_path do |f| %>
+    <div class="col"><%= f.label :login %><%= f.text_field :login %></div>
+    <div class="col"><%= f.label :password %><%= f.password_field :password %></div>
+    <div class="col checkbox"><%= f.check_box :remember_me %><%= f.label :remember_me %></div>
+    <% if Setting.login_captcha.to_bool -%>
+      <%= captcha_block "验证码" %>
+    <% end -%>
+    <div class="col"><%= submit_tag "登录", :disable_with => "提交中..." %></div>
+  <% end -%>
+</div>
+

@@ -12,9 +12,9 @@
 ActiveRecord::Schema.define(:version => 20100908092108) do
 
   create_table "permissions", :force => true do |t|
-    t.string   "name",       :null => false
-    t.string   "controller", :null => false
-    t.string   "action",     :null => false
+    t.string   "name"
+    t.string   "controller_name", :null => false
+    t.string   "action_name",     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

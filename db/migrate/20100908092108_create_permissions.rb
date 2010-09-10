@@ -1,9 +1,9 @@
 class CreatePermissions < ActiveRecord::Migration
   def self.up
     create_table :permissions do |t|
-      t.string :name, :null => false
-      t.string :controller, :null => false
-      t.string :action, :null => false
+      t.string :name
+      t.string :controller_name, :null => false
+      t.string :action_name, :null => false
       t.timestamps
     end
 

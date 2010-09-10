@@ -1,0 +1,15 @@
+body {background-color:#fcf5e0;font-family:"Microsoft YaHei";font-size:12px;}
+
+h1,h2,h3,h4,h5,h6 {font-weight:400;color:#333;}
+h1 {font-size:26px;line-height:1;}
+h2 {font-size:2em;}
+h3 {font-size:1.5em;}
+h4 {font-size:1.2em;}
+h5 {font-size:1em;}
+h6 {font-size:1em;}
+
+a:link, a:active, a:visited {text-decoration:none;color:#333;cursor::auto;font-size:12px;}
+a:hover {text-decoration:none;color:#336699;}
+
+
+

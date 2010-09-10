@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
   before_filter :require_user, :except => [:login, :login_user] #登录
-  before_filter :auth_permission, :except => [:login, :login_user] #权限
+  before_filter :auth_permission, :except => [:login, :login_user, :logout] #权限
 
 
   private
@@ -82,7 +82,7 @@ class ApplicationController < ActionController::Base
   # 权限验证
   def auth_permission
     user_permissions = current_user.permissions
-    unless user_permissions.detect { |p| p.controller == controller_name && p.action == action_name}
+    unless user_permissions.detect { |p| p.controller_name == controller_name && p.action_name == action_name}
       error_notice "你没有权限访问该页面"
       store_location ? (redirect_to :back) : (redirect_to root_path)
       return false

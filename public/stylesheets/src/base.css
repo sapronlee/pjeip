@@ -11,5 +11,22 @@ h4 {font-size:18px;}
 h5 {font-size:16px;}
 h6 {font-size:14px;}
 form {margin:10px 0;}
-div.errorExplanation {margin:10px;padding:10px;border:1px solid #D82801;background-color:#FFDACE;color:#D82801;letter-spacing: 1px;}
+div.errorExplanation {margin:10px;padding:10px;border:1px solid #D82801;
+  background-color:#FFDACE;color:#D82801;letter-spacing: 1px;}
 
+
+#header {width:100%;margin:0;padding:0;background:#336699 url(/images/header_bg.jpg) repeat-x;}
+  #header #top {height:80px;padding:0 10px;overflow:hidden;}
+    #top #logo {margin-top:15px;height:40px;width:369px;}
+    #top #nav {height:25px;}
+      #nav ul {height:25px;overflow:hidden;float:right;}
+        #nav ul li {float:left;background-color:#000;margin-left:6px;height:25px;}
+          #nav ul li a {display:block;padding:7px 10px 6px 10px;color:#FFF;}
+          #nav ul li a:hover {background-color:#FFF;color:#000;}
+          #nav ul li a.current {background-color:#FFF;color:#000;}
+  #header #sub_col {height:30px;background-color:#000;border-bottom:1px #999 solid;color:#FFF;overflow:hidden;}
+    #sub_col .inner {width:960px;margin:0 auto;position:relative;height:30px;}
+      #sub_col #current_time, #sub_col #current_user {position:absolute;top:9px;}
+      #sub_col #current_user {right:0px;}
+        #current_user a {color:#336699;padding-left:3px;}
+        #current_user a:hover {background-color:#FFF;}

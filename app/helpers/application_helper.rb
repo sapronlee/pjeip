@@ -11,5 +11,9 @@ module ApplicationHelper
     end
     return result
   end
+  
+  def page_title
+    @page_title || "YTRIP EIP"
+  end
 
 end

@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  layout 'home'
+
   validates_captcha
 
   def index
@@ -9,6 +9,7 @@ class HomeController < ApplicationController
   def login
     @user_session = UserSession.new
     set_seo_meta "登录页"
+    render :layout => false
   end
 
   def login_user

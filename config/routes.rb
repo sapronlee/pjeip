@@ -46,6 +46,10 @@ ActionController::Routing::Routes.draw do |map|
   map.login 'login', :controller => :home, :action => :login
   map.login_user 'login_user', :controller => :home, :action => :login_user
   map.logout 'logout', :controller => :home, :action => :logout
+  
+  map.namespace :admin do |admin|
+    admin.root :controller => :home, :action => :index
+  end
 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'

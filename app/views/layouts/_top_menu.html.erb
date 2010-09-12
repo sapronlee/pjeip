@@ -1,0 +1,12 @@
+<% unless current_user.permissions.blank? %>
+<ul>
+	<% current_user.permissions.each do |p| %>
+		<% if p.controller_name == "home" and p.action_name == "index" %>
+			<li><a href="<%= root_path %>"<%= " class=\"current\"" if controller.controller_path == "home" %>>我的首页</a></li>
+		<% end -%>
+		<% if p.controller_name == "admin/home" and p.action_name == "index" %>
+			<li><a href="<%= admin_root_path %>"<%= " class=\"current\"" if controller.controller_path == "admin/home" %>>管理首页</a></li>
+		<% end -%>
+	<% end -%>
+</ul>
+<% end -%>

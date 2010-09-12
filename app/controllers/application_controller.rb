@@ -82,11 +82,16 @@ class ApplicationController < ActionController::Base
   # 权限验证
   def auth_permission
     user_permissions = current_user.permissions
-    unless user_permissions.detect { |p| p.controller_name == controller_name && p.action_name == action_name}
-      error_notice "你没有权限访问该页面"
-      store_location ? (redirect_to :back) : (redirect_to root_path)
+    unless user_permissions.detect { |p| p.controller_name == controller_path && p.action_name == action_name}
+      #error_notice "你没有权限访问该页面"
+      #store_location ? (redirect_to :back) : (redirect_to root_path)
+      redirect_403
       return false
     end
+  end
+  
+  def redirect_403
+    redirect_to "/403.html"
   end
 
 end

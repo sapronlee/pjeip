@@ -1,38 +1,26 @@
 function current_time() {
-  var today,hour,second,minute,year,month,date; 
-  var strDate;
-  today = new Date();
-  var n_day = today.getDay();
-  switch(n_day) {
-    case 0: 
-      strDate = "星期日";
-      break;
-    case 1:
-      strDate = "星期一";
-      break;
-    case 2:
-      strDate = "星期二";
-      break;
-    case 3:
-      strDate = "星期三";
-      break;
-    case 4:
-      strDate = "星期四";
-      break;
-    case 5:
-      strDate = "星期五";
-    case 6:
-      strDate = "星期六";
-    case 7:
-      strDate = "星期日"
-  }
-  year = today.getYear();
-  month = today.getMonth() + 1;
-  date = today.getDate();
-  hour = today.getHours();
-  minute = today.getMinutes();
-  second = today.getSeconds();
-
-  /*return "当前时间: " + year + "年" + month + "月" + date + "日 " + hour + ":" + minute + "  " + n_day;*/
-  return year
+  var today = new Date()
+	var year = today.getFullYear();
+	var month = today.getMonth() + 1;
+	var day = today.getDate();
+	var hour = checkTime(today.getHours())
+	var minute = checkTime(today.getMinutes())
+	var second = checkTime(today.getSeconds())
+	var weekday = new Array(7)
+	weekday[0] = "日"
+	weekday[1] = "一"
+	weekday[2] = "二"
+	weekday[3] = "三"
+	weekday[4] = "四"
+	weekday[5] = "五"
+	weekday[6] = "六"
+  return "当前时间： " + year + "年" + month + "月" + day + "日 " + hour + "：" + minute + "：" + second + "  星期" + weekday[today.getDay()]
 }
+
+function checkTime(i) {
+	if (i < 10) {
+		i="0" + i
+	}
+  return i
+}
+

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_one :user_profile
   has_and_belongs_to_many :roles
   acts_as_authentic do |c|
     logged_in_timeout = 1.minutes

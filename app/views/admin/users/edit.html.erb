@@ -1,0 +1,9 @@
+<div class="submenu">
+  <%= render :partial => "menu" %>
+</div>
+<% semantic_form_for @user do |f| %>
+  <% f.inputs :name => "基础信息" do %>
+    <%= f.input :login %>
+    <%= f.input :email %>
+  <% end %>
+<% end %>

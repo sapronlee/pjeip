@@ -9,9 +9,9 @@
 		<% unless @description.blank? %>
 			<meta name="description" content="<%= @description %>" /> 
     <% end -%>
-    <%= stylesheet_link_tag "src/lib/960/reset", "src/lib/960/960", "src/base" %>
+    <%= stylesheet_link_tag "src/lib/960/reset", "src/lib/960/960", "src/lib/jquery-ui", "src/lib/jquery-ui-redmond", "src/base", "src/lib/formtastic" %>
     <%= yield :styles -%>
-    <%= javascript_include_tag "src/lib/jquery/jquery-1.4.2", "src/lib/jquery/jquery.timers", "src/time" %>
+    <%= javascript_include_tag "src/lib/jquery/jquery-1.4.2", "src/lib/jquery/jquery.ui.core", "src/lib/jquery/jquery.ui.widget", "src/lib/jquery/jquery.ui.datepicker", "src/lib/jquery/jquery.ui.datepicker-zh-CN", "src/lib/jquery/jquery.timers", "src/time" %>
 		<script type="text/javascript">
 	    $(document).ready(function(){
 					$("#current_time").append(current_time);
@@ -37,7 +37,7 @@
 		    </div>
 		  </div>
 		</div>
-		<div id="main"><%= yield -%></div>
+		<div id="main" class="container_12"><%= yield -%></div>
 		<div id="footer"></div>
   </body>
 </html>

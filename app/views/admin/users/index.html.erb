@@ -1,0 +1,14 @@
+<% content_for :scripts do %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $(".date").datepicker({
+          inline: true  
+        });
+    });
+  </script>
+<% end %>
+<div class="submenu">
+  <%= render :partial => "menu" %>
+</div>
+
+<div class="date"></div>

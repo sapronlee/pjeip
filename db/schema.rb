@@ -9,7 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100908092108) do
+ActiveRecord::Schema.define(:version => 20100913021531) do
+
+  create_table "groups", :force => true do |t|
+    t.string   "name",           :null => false
+    t.integer  "groups_counter"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "permissions", :force => true do |t|
     t.string   "name"
@@ -28,6 +35,12 @@ ActiveRecord::Schema.define(:version => 20100908092108) do
 
   add_index "permissions_roles", ["permission_id"], :name => "index_permissions_roles_on_permission_id"
   add_index "permissions_roles", ["role_id", "permission_id"], :name => "index_permissions_roles_on_role_id_and_permission_id", :unique => true
+
+  create_table "positions", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name",       :null => false
@@ -50,6 +63,21 @@ ActiveRecord::Schema.define(:version => 20100908092108) do
     t.string   "value",       :null => false
     t.string   "object_type"
     t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_profiles", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "group_id"
+    t.integer  "position_id"
+    t.string   "name",                     :null => false
+    t.integer  "gender",      :limit => 1, :null => false
+    t.datetime "birthdate",                :null => false
+    t.integer  "id_card",                  :null => false
+    t.string   "address",                  :null => false
+    t.datetime "entry_date",               :null => false
+    t.datetime "leave_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

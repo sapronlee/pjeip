@@ -30,3 +30,12 @@ div.errorExplanation {margin:10px;padding:10px;border:1px solid #D82801;
       #sub_col #current_user {right:0px;}
         #current_user a {color:#336699;padding-left:3px;}
         #current_user a:hover {background-color:#FFF;}
+
+#main {margin:10px auto;}
+  #main .submenu {margin-bottom:10px;}
+  #main .submenu ul{width:100%;border-bottom:1px solid #336699;}
+    #main .submenu ul li {display:inline-block;margin-right:10px;}
+     #main .submenu ul li a {display:block;padding:5px 15px;background-color:#ccc;color:#333;}
+     #main .submenu ul li a:hover {color:#FFF;background-color:#336699;}
+     #main .submenu ul li a.current {font-size:14px;background-color:#336699;color:#FFF;}
+

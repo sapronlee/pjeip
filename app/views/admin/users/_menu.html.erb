@@ -1,0 +1,10 @@
+<% unless current_user.permissions.blank? %>
+  <ul>
+    <% if is_allow("admin/users", "index") %>
+      <li><a href="<%= admin_users_path %>"<%= current_page("admin/users", "index") %>>会员列表</a></li>
+    <% end -%>
+    <% if is_allow("admin/users", "new") %>
+      <li><a href="<%= new_admin_user_path %>"<%= current_page("admin/users", ["new", "create"]) %>>添加会员</a></li>
+    <% end -%>
+  </ul>
+<% end -%>

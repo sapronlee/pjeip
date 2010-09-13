@@ -81,10 +81,12 @@ class ApplicationController < ActionController::Base
   
   # 权限验证
   def auth_permission
-    user_permissions = current_user.permissions
-    unless user_permissions.detect { |p| p.controller_name == controller_path && p.action_name == action_name}
-      redirect_403
-      return false
+    unless current_user.admin?
+      user_permissions = current_user.permissions
+      unless user_permissions.detect { |p| p.controller_name == controller_path && p.action_name == action_name}
+        redirect_403
+        return false
+      end
     end
   end
   

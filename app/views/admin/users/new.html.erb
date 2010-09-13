@@ -9,23 +9,26 @@
   <%= render :partial => "menu" %>
 </div>
 <% semantic_form_for @user, :url => admin_users_path do |f| %>
-  <% f.inputs do %>
+  <%= f.error_messages %>
+	<% f.inputs do %>
     <%= f.input :login %>
     <%= f.input :email %>
   <% end %>
-  <% f.inputs :for => :profile do |pf| %>
-    <%= pf.input :name %>
-    <%= pf.input :gender, :as => :select, :collection => [["女士", Enum::USER_GENDER[:female]], ["先生", Enum::USER_GENDER[:male]]] %>
-    <%= pf.input :birthdate, :input_html => {:class => "date"} %>
-    <%= pf.input :id_card %>
-    <%= pf.input :entry_date, :input_html => {:class => "date"} %>
-    <%= pf.input :leave_date, :required => false, :input_html => {:class => "date"} %>
-    <%= pf.input :address, :as => :text, :input_html => {:rows => 5} %>
-  <% end %>
-  <% f.inputs :for => :profile do |pf| %>
-    <%= pf.input :group_id, :as => :select, :collection => @groups  %>
-    <%= pf.input :position_id, :as => :select, :collection => @positions  %>
-  <% end %>
+	<% f.semantic_fields_for @profile do |pf| %>
+		<% pf.inputs do %>
+	    <%= pf.input :name %>
+	    <%= pf.input :gender, :as => :select, :collection => [["女士", Enum::USER_GENDER[:female]], ["先生", Enum::USER_GENDER[:male]]] %>
+	    <%= pf.input :birthdate, :input_html => {:class => "date"} %>
+	    <%= pf.input :id_card %>
+	    <%= pf.input :entry_date, :input_html => {:class => "date"} %>
+	    <%= pf.input :leave_date, :required => false, :input_html => {:class => "date"} %>
+	    <%= pf.input :address, :as => :text, :input_html => {:rows => 5} %>
+	  <% end %>
+	  <% pf.inputs do %>
+	    <%= pf.input :group_id, :as => :select, :collection => @groups  %>
+	    <%= pf.input :position_id, :as => :select, :collection => @positions  %>
+	  <% end %>
+	<% end %>
   <% f.buttons do %>
     <%= f.commit_button "保存" %>
   <% end %>

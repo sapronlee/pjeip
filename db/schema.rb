@@ -12,8 +12,7 @@
 ActiveRecord::Schema.define(:version => 20100913021531) do
 
   create_table "groups", :force => true do |t|
-    t.string   "name",           :null => false
-    t.integer  "groups_counter"
+    t.string   "name",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -83,6 +82,7 @@ ActiveRecord::Schema.define(:version => 20100913021531) do
   end
 
   create_table "users", :force => true do |t|
+    t.string   "object_type",                        :null => false
     t.string   "login",                              :null => false
     t.string   "email",                              :null => false
     t.string   "crypted_password",                   :null => false

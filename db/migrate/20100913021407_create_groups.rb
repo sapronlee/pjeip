@@ -2,7 +2,6 @@ class CreateGroups < ActiveRecord::Migration
   def self.up
     create_table :groups do |t|
       t.string :name, :null => false
-      t.integer :groups_counter
       t.timestamps
     end
   end

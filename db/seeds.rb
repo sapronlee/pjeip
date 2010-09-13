@@ -4,7 +4,7 @@ Setting.create(:key => "web_description", :value => "Ytrip is EIP", :description
 Setting.create(:key => "login_captcha", :value => "0", :description => "登录是否验证")
 
 #添加用户
-User.create(:login => "sapronlee", :password => "123123", :password_confirmation => "123123", :email => "sapronlee@gmail.com")
+Admin.create(:login => "sapronlee", :password => "123123", :password_confirmation => "123123", :email => "sapronlee@gmail.com")
 
 #添加角色
 Role.create(:name => "管理员")

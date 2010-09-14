@@ -11,8 +11,12 @@ h4 {font-size:18px;}
 h5 {font-size:16px;}
 h6 {font-size:14px;}
 form {margin:10px 0;}
-div.errorExplanation {margin:10px;padding:10px;border:1px solid #D82801;
+div.errorExplanation {margin-bottom:10px;border:1px solid #D82801;
   background-color:#FFDACE;color:#D82801;letter-spacing: 1px;}
+.errorExplanation h2 {padding:10px;}
+.errorExplanation p {padding-left:10px;}
+div.errorExplanation ul {padding:10px;list-style-type:square;}
+  .errorExplanation ul li {padding:3px;color:#333;margin-left:20px;}
 
 
 #header {width:100%;margin:0;padding:0;background:#336699 url(/images/header_bg.jpg) repeat-x;}

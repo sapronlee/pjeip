@@ -1,9 +1,33 @@
+<% content_for :scripts do %>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        $("input.date").datepicker();
+    });
+  </script>
+<% end %>
 <div class="submenu">
   <%= render :partial => "menu" %>
 </div>
-<% semantic_form_for @user do |f| %>
-  <% f.inputs :name => "基础信息" do %>
+<% semantic_form_for @user, :url => @user.id ? admin_user_path(@user) : admin_users_path do |f| %>
+  <%= f.error_messages %>
+	<% f.inputs do %>
     <%= f.input :login %>
     <%= f.input :email %>
+  <% end %>
+  <% f.inputs :for => :profile do |pf| %>
+    <%= pf.input :name %>
+    <%= pf.input :gender, :as => :select, :collection => [["女士", Enum::USER_GENDER[:female]], ["先生", Enum::USER_GENDER[:male]]] %>
+    <%= pf.input :birthdate, :as => :string, :input_html => {:class => "date"} %>
+    <%= pf.input :id_card %>
+    <%= pf.input :entry_date, :as => :string, :input_html => {:class => "date"} %>
+    <%= pf.input :leave_date, :as => :string, :required => false, :input_html => {:class => "date"} %>
+    <%= pf.input :address, :as => :text, :input_html => {:rows => 5} %>
+  <% end %>
+  <% f.inputs :for => :profile do |pf| %>
+	  <%= pf.input :group_id, :as => :select, :collection => Group.to_array  %>
+	  <%= pf.input :position_id, :as => :select, :collection => Position.to_array  %>
+	<% end %>
+  <% f.buttons do %>
+    <%= f.commit_button %>
   <% end %>
 <% end %>

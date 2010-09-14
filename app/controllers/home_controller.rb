@@ -25,6 +25,7 @@ class HomeController < ApplicationController
       return redirect_to login_path
     end
     
+    Logger.success @user_session
     if @user_session.save
       redirect_to root_path
     else

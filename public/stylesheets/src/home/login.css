@@ -15,5 +15,5 @@ html,body {height:100%;background-color:#F8FBF5;}
 			#login .captcha #captcha {width:128px;}
   		#login .captcha img {margin-left:70px;width:130px;}
 
-
+div.errorExplanation {padding:10px;margin:0 10px;}
 

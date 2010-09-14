@@ -3,5 +3,5 @@ class UserProfile < ActiveRecord::Base
   belongs_to :position
   belongs_to :user
   
-  validates_presence_of :name, :gender, :birthdate, :id_card, :address, :entry_date
+  validates_presence_of :name, :gender, :birthdate, :id_card, :address, :entry_date, :group_id, :position_id
 end

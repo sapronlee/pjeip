@@ -4,6 +4,11 @@
  	<% end -%>
  	<% if is_allow("admin/users", "new") %>
    	<li><a href="<%= new_admin_user_path %>"<%= current_page("admin/users", "new", "create") %>>添加会员</a></li>
- 	<% end -%>
+  <% end -%>
+  <% if ["edit", "update"].index(params[:action]) %>
+ 	  <% if is_allow("admin/users", "edit") %>
+   	  <li><a href="<%= edit_admin_user_path(params[:id]) %>"<%= current_page("admin/users", "edit", "update") %>>修改会员</a></li>
+    <% end -%>
+  <% end -%>
 </ul>
 

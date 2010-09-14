@@ -12,6 +12,7 @@
     <%= stylesheet_link_tag "src/lib/960/reset", "src/lib/960/960", "src/lib/jquery-ui", "src/lib/jquery-ui-redmond", "src/base", "src/lib/formtastic" %>
     <%= yield :styles -%>
     <%= javascript_include_tag "src/lib/jquery/jquery-1.4.2", "src/lib/jquery/jquery.ui.core", "src/lib/jquery/jquery.ui.widget", "src/lib/jquery/jquery.ui.datepicker", "src/lib/jquery/jquery.ui.datepicker-zh-CN", "src/lib/jquery/jquery.timers", "src/time" %>
+    <%= yield :scripts -%>
 		<script type="text/javascript">
 	    $(document).ready(function(){
 					$("#current_time").append(current_time);
@@ -20,7 +21,6 @@
 	        });
 	    });
 	  </script>
-    <%= yield :scripts -%>
   </head>
   <body>
 		<div id="header">

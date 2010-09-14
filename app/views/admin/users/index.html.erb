@@ -1,14 +1,29 @@
+<% content_for :styles do %>
+  <%= stylesheet_link_tag "src/lib/wice_grid" %>
+<% end %>
+
 <% content_for :scripts do %>
-  <script type="text/javascript">
-    $(document).ready(function(){
-        $(".date").datepicker({
-          inline: true  
-        });
-    });
-  </script>
+  <%= javascript_include_tag "src/lib/wice_grid" %>
 <% end %>
 <div class="submenu">
   <%= render :partial => "menu" %>
 </div>
-
-<div class="date"></div>
+<%= grid(@users, :show_filters => :always) do |g|
+  g.action_column
+  g.column :column_name => "ID", :attribute_name => "id", :no_filter => true
+  g.column :column_name => "用户名", :attribute_name => "login"
+  g.column :column_name => "姓名", :model_class => "UserProfile", :attribute_name => "name" do |c|
+    c.profile.name if c.profile
+  end
+  g.column :column_name => "性别", :model_class => "UserProfile", :attribute_name => "gender",
+    :custom_filter => {'男' => 1, '女' => 0} do |c|
+    display_gender(c.profile.gender) if c.profile
+  end
+  g.column :column_name => "入职日期", :model_class => "UserProfile", :attribute_name => "entry_date", :no_filter => true do |c|
+    c.profile.entry_date.to_s(:db) if c.profile
+  end
+  g.column :column_name => "是否离职", :model_class => "UserProfile", :attribute_name => "leave_date",
+    :custom_filter => [['离职', 'not null'], ['在职', 'null']] do |c|
+    display_leave_date(c.profile.leave_date) if c.profile
+  end
+end -%>

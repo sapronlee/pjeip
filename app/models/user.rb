@@ -1,22 +1,13 @@
 class User < ActiveRecord::Base
-  has_one :user_profile, :dependent => :destroy
+  has_one :profile, :class_name => "UserProfile", :dependent => :destroy
   has_and_belongs_to_many :roles
-  
+  accepts_nested_attributes_for :profile
   set_inheritance_column 'object_type'
   
   acts_as_authentic do |c|
     c.logged_in_timeout = 1.minutes
-    c.validate_login_field = false
-    c.validate_email_field = false
-    c.validate_password_field = false 
   end
 
-  validates_presence_of :login, :email
-  #validates_length_of :login, :in => 2..10
-  #validates_uniqueness_of :login, :email
-  #validates_format_of :email, :with => /^(?:[a-z\d]+[_\-\+\.]?)*[a-z\d]+@(?:([a-z\d]+\-?)*[a-z\d]+\.)+([a-z]{2,})+$/i
-  validates_associated :user_profile
-  
 
   def permissions
     user_permissions = []
@@ -28,10 +19,22 @@ class User < ActiveRecord::Base
   end
 
   def to_s
-    self.login
+    self.admin? ? self.login : self.profile.name
   end
   
   def admin?
     self.class == Admin
+  end
+
+  def save_default_password
+    if self.password.blank?
+      self.password = "ytrip"
+    end
+    if self.password_confirmation.blank?
+      self.password_confirmation = self.password
+    end
+    if self.object_type.blank?
+      self.object_type = self.class.to_s
+    end
   end
 end

@@ -1,0 +1,28 @@
+<% content_for :styles do %>
+  <%= stylesheet_link_tag "src/lib/wice_grid" %>
+<% end %>
+
+<% content_for :scripts do %>
+  <%= javascript_include_tag "src/lib/wice_grid" %>
+<% end %>
+<div class="submenu">
+  <%= render :partial => "admin/users/menu" %>
+</div>
+<%= notice_message %>
+<%= grid(@groups) do |g|
+  g.column :column_name => "ID", :attribute_name => "id", :no_filter => true
+  g.column :column_name => "部门名", :attribute_name => "name"
+  g.column :column_name => "用户数" do |c|
+    c.user_profiles.size
+  end
+  if is_allow("admin/groups", "edit")
+    g.column :column_name => "编辑" do |c|
+      link_to("编辑", edit_admin_group_path(c))
+    end
+  end
+  if is_allow("admin/groups", "destroy")
+    g.column :column_name => "删除" do |c|
+      link_to("删除", admin_group_path(c), :method => :delete, :confirm => "你确定要删除吗?")
+    end
+  end
+end -%>

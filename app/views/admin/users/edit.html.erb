@@ -1,7 +1,11 @@
 <% content_for :scripts do %>
+  <%= javascript_include_tag "src/lib/jquery/jquery.ui.core", "src/lib/jquery/jquery.ui.widget", "src/lib/jquery/jquery.ui.datepicker", "src/lib/jquery/jquery.ui.datepicker-zh-CN" %>
   <script type="text/javascript">
     $(document).ready(function(){
-        $("input.date").datepicker();
+        $("input.date").datepicker({
+          changeYear: true,
+          yearRange: "1950:2020"
+        });
     });
   </script>
 <% end %>
@@ -24,7 +28,7 @@
     <%= pf.input :address, :as => :text, :input_html => {:rows => 5} %>
   <% end %>
   <% f.inputs :for => :profile do |pf| %>
-	  <%= pf.input :group_id, :as => :select, :collection => Group.to_array  %>
+    <%= pf.input :group_id, :as => :select, :collection => Group.to_array %>
 	  <%= pf.input :position_id, :as => :select, :collection => Position.to_array  %>
 	<% end %>
   <% f.buttons do %>

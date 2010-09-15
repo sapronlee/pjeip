@@ -18,6 +18,8 @@ div.errorExplanation {margin-bottom:10px;border:1px solid #D82801;
 div.errorExplanation ul {padding:10px;list-style-type:square;}
   .errorExplanation ul li {padding:3px;color:#333;margin-left:20px;}
 
+div.successMessage { font-size:12px; margin:10px 0; background:#ECFFC7;padding:10px; border: 1px solid #CFE293; }
+
 
 #header {width:100%;margin:0;padding:0;background:#336699 url(/images/header_bg.jpg) repeat-x;}
   #header #top {height:80px;padding:0 10px;overflow:hidden;}

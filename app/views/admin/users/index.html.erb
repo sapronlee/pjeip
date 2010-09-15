@@ -8,8 +8,8 @@
 <div class="submenu">
   <%= render :partial => "menu" %>
 </div>
-<%= grid(@users, :show_filters => :always) do |g|
-  g.action_column
+<%= notice_message %>
+<%= grid(@users) do |g|
   g.column :column_name => "ID", :attribute_name => "id", :no_filter => true
   g.column :column_name => "用户名", :attribute_name => "login"
   g.column :column_name => "姓名", :model_class => "UserProfile", :attribute_name => "name" do |c|
@@ -19,11 +19,30 @@
     :custom_filter => {'男' => 1, '女' => 0} do |c|
     display_gender(c.profile.gender) if c.profile
   end
-  g.column :column_name => "入职日期", :model_class => "UserProfile", :attribute_name => "entry_date", :no_filter => true do |c|
-    c.profile.entry_date.to_s(:db) if c.profile
+  g.column :column_name => "入职日期", :model_class => "UserProfile", :attribute_name => "entry_date", 
+    :no_filter => true do |c|
+    c.profile.entry_date.to_date if c.profile
   end
   g.column :column_name => "是否离职", :model_class => "UserProfile", :attribute_name => "leave_date",
     :custom_filter => [['离职', 'not null'], ['在职', 'null']] do |c|
     display_leave_date(c.profile.leave_date) if c.profile
+  end
+  g.column :column_name => "部门", :model_class => "UserProfile", :attribute_name => "group_id",
+    :custom_filter => Group.to_array do |c|
+    c.profile.group.name if c.profile.group
+  end
+  g.column :column_name => "职位", :model_class => "UserProfile", :attribute_name => "position_id",
+    :custom_filter => Position.to_array do |c|
+    c.profile.position.name if c.profile.position  
+  end
+  if is_allow("admin/users", "edit")
+    g.column :column_name => "编辑" do |c|
+      link_to("编辑", edit_admin_user_path(c))
+    end
+  end
+  if is_allow("admin/users", "destroy")
+    g.column :column_name => "删除" do |c|
+      link_to("删除", admin_user_path(c), :method => :delete, :confirm => "你确定要删除吗?")
+    end
   end
 end -%>

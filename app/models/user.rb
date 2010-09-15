@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_one :profile, :class_name => "UserProfile", :dependent => :destroy
+  has_one :profile, :class_name => "UserProfile", :dependent => :destroy, :include => [:group, :position]
   has_and_belongs_to_many :roles
   accepts_nested_attributes_for :profile
   set_inheritance_column 'object_type'

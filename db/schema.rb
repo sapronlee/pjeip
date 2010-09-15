@@ -70,13 +70,13 @@ ActiveRecord::Schema.define(:version => 20100913021531) do
     t.integer  "user_id"
     t.integer  "group_id"
     t.integer  "position_id"
-    t.string   "name",                     :null => false
-    t.integer  "gender",      :limit => 1, :null => false
-    t.datetime "birthdate",                :null => false
-    t.integer  "id_card",                  :null => false
-    t.string   "address",                  :null => false
-    t.datetime "entry_date",               :null => false
-    t.datetime "leave_date"
+    t.string   "name",                      :null => false
+    t.integer  "gender",      :limit => 1,  :null => false
+    t.date     "birthdate",                 :null => false
+    t.string   "id_card",     :limit => 18, :null => false
+    t.string   "address",                   :null => false
+    t.date     "entry_date",                :null => false
+    t.date     "leave_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

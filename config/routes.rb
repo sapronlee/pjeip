@@ -50,6 +50,8 @@ ActionController::Routing::Routes.draw do |map|
   map.namespace :admin do |admin|
     admin.root :controller => :home, :action => :index
     admin.resources :users
+    admin.resources :groups
+    admin.resources :positions
   end
 
   map.connect ':controller/:action/:id'

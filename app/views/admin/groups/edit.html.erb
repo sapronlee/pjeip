@@ -1,0 +1,12 @@
+<div class="submenu">
+  <%= render :partial => "admin/users/menu" %>
+</div>
+<% semantic_form_for @group, :url => @group.id ? admin_group_path(@group) : admin_groups_path do |f| %>
+  <%= f.error_messages %>
+	<% f.inputs do %>
+    <%= f.input :name %>
+  <% end %>
+  <% f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>

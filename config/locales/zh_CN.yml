@@ -135,6 +135,8 @@ zh_CN:
     models:
       user: "用户信息"
       user_profile: "用户信息"
+      group: "部门信息"
+      position: "职称信息"
     attributes:
       user:
         login: "用户名"
@@ -149,7 +151,11 @@ zh_CN:
         leave_date: "离职日期"
         address: "住址"
         group_id: "部门"
-        position_id: "职位"
+        position_id: "职称"
+      group:
+        name: "部门名"
+      position:
+        name: "职称名"
 
 
   activemodel:
@@ -176,6 +182,10 @@ zh_CN:
         address: "住址"
         group_id: "部门"
         position_id: "职位"
+      group:
+        name: "部门名"
+      position:
+        name: "职称名"
     actions:
       create: "创建"
       update: "修改"

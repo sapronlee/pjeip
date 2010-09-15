@@ -1,0 +1,12 @@
+<div class="submenu">
+  <%= render :partial => "admin/users/menu" %>
+</div>
+<% semantic_form_for @position, :url => @position.id ? admin_position_path(@position) : admin_positions_path do |f| %>
+  <%= f.error_messages %>
+	<% f.inputs do %>
+    <%= f.input :name %>
+  <% end %>
+  <% f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>

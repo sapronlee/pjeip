@@ -28,8 +28,9 @@
 
 
 .wice_grid th.filter_icons, .wice_grid th.hide_show_icon {
-  text-align: right ;
+  text-align: center ;
 }
+
 
 .wice_grid thead {
   border-bottom:1px solid #eee;
@@ -37,6 +38,10 @@
 .wice_grid tfoot tr td {
   padding:8px;
 }
+
+/*自定义*/
+.wice_grid tbody tr td { text-align:center; }
+
 
 .wice_grid tr.odd {
   background-color: #fff;

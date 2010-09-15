@@ -18,7 +18,7 @@ class Admin::PositionsController < Admin::ApplicationController
   def create
     @position = Position.new params[:position]
     if @position.save
-      success_notice "部门创建成功!"
+      success_notice "职称创建成功!"
       redirect_to admin_positions_path
     else
       render :action => :edit
@@ -28,7 +28,7 @@ class Admin::PositionsController < Admin::ApplicationController
   def update
     @position = Position.find params[:id]
     if @position.update_attributes(params[:position])
-      success_notice "部门修改成功!"
+      success_notice "职称修改成功!"
       redirect_to admin_positions_path
     else
       render :action => :edit
@@ -38,9 +38,9 @@ class Admin::PositionsController < Admin::ApplicationController
   def destroy
     @position = Position.find params[:id]
     if @position.destroy
-      success_notice "部门删除成功!"
+      success_notice "职称删除成功!"
     else
-      error_notice "部门删除失败!"
+      error_notice "职称删除失败!"
     end
     redirect_to admin_positions_path
   end

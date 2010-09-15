@@ -1,0 +1,13 @@
+<ul>
+ 	<% if is_allow("admin/roles", "index") %>
+   	<li><a href="<%= admin_roles_path %>"<%= current_page("admin/roles", "index") %>>角色列表</a></li>
+ 	<% end -%>
+ 	<% if is_allow("admin/roles", "new") %>
+   	<li><a href="<%= new_admin_role_path %>"<%= current_page("admin/roles", "new", "create") %>>添加角色</a></li>
+  <% end -%>
+  <% if ["edit", "update"].index(params[:action]) && "admin/roles" == controller.controller_path %>
+ 	  <% if is_allow("admin/roles", "edit") %>
+   	  <li><a href="<%= edit_admin_role_path(params[:id]) %>"<%= current_page("admin/roles", "edit", "update") %>>修改角色</a></li>
+    <% end -%>
+  <% end -%>
+</ul>

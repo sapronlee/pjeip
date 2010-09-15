@@ -1,0 +1,13 @@
+<div class="submenu">
+  <%= render :partial => "menu" %>
+</div>
+<% semantic_form_for @role, :url => @role.id ? admin_role_path(@role) : admin_roles_path do |f| %>
+  <%= f.error_messages %>
+	<% f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :description, :as => :text, :input_html => {:rows => 5} %>
+  <% end %>
+  <% f.buttons do %>
+    <%= f.commit_button %>
+  <% end %>
+<% end %>

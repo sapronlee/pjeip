@@ -1,10 +1,10 @@
 class Admin::UsersController < Admin::ApplicationController
   def index
     @users = initialize_grid(User,
-                            :per_page => Setting.page_size.to_i,
-                            :conditions => ["object_type = ?", "User"],
-                            :order => "id",
-                            :include => [:profile])
+      :per_page => Setting.page_size.to_i,
+      :conditions => ["object_type = ?", "User"],
+      :order => "id",
+      :include => [:profile])
   end
   
   def new

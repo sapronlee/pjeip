@@ -52,6 +52,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :users
     admin.resources :groups
     admin.resources :positions
+    admin.resources :roles
   end
 
   map.connect ':controller/:action/:id'

@@ -29,6 +29,7 @@
 
 .wice_grid th.filter_icons, .wice_grid th.hide_show_icon {
   text-align: center ;
+  width:50px;
 }
 
 
@@ -56,6 +57,9 @@
   border-left:1px solid #F0F0F0;
 }
 
+.wice_grid td.text_left {text-align:left;line-height:150%;}
+.wice_grid td.text_right {text-align:right;}
+.wice_grid td.action {width:60px;}
 .wice_grid .desc,  .wice_grid .asc{ 
   padding-right: 18px; 
   text-decoration:none;
@@ -75,8 +79,8 @@
 .wice_grid tr.even td.active_filter  { background-color: #ddddff; }
 .wice_grid tr.odd td.active_filter  { background-color: #eeeeff; }
 
-.wice_grid tr.even td.sorted { background-color: #ffffcc; }
-.wice_grid tr.odd td.sorted { background-color: #ffffee; }
+.wice_grid tr.even td.sorted { background-color: #ffffcc;width:50px; }
+.wice_grid tr.odd td.sorted { background-color: #ffffee; width:50px;}
 
 
 .wice_grid a.date_label {text-decoration: none; font-weight:normal; font-size:10px; }
@@ -169,6 +173,4 @@
   margin-left : 0px;
 }
 
-/*custom*/
-.wice_grid td.action {text-align:center;}
 

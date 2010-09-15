@@ -10,4 +10,9 @@
    	  <li><a href="<%= edit_admin_role_path(params[:id]) %>"<%= current_page("admin/roles", "edit", "update") %>>修改角色</a></li>
     <% end -%>
   <% end -%>
+  <% if ["users"].index(params[:action]) && "admin/roles" == controller.controller_path %>
+ 	  <% if is_allow("admin/roles", "users") %>
+   	  <li><a href="<%= users_admin_role_path(params[:id]) %>"<%= current_page("admin/roles", "users") %>>查看角色用户</a></li>
+    <% end -%>
+  <% end -%>
 </ul>

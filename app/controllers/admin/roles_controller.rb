@@ -43,4 +43,7 @@ class Admin::RolesController < Admin::ApplicationController
     end
     redirect_to admin_roles_path
   end
+
+  def users
+  end
 end

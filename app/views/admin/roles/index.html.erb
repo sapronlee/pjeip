@@ -14,7 +14,12 @@
   g.column :column_name => "角色名", :attribute_name => "name"
   g.column :column_name => "描述", :attribute_name => "description", :no_filter => true,
     :class => "text_left" do |c|
-    truncate(c.description, 50)
+    truncate(c.description, 44)
+  end
+  if is_allow("admin/roles", "users")
+    g.column :column_name => "用户", :class => "action" do |c|
+      link_to("用户", users_admin_role_path(c))
+    end
   end
   if is_allow("admin/roles", "edit")
     g.column :column_name => "编辑", :class => "action" do |c|

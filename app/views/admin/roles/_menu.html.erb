@@ -15,4 +15,15 @@
    	  <li><a href="<%= users_admin_role_path(params[:id]) %>"<%= current_page("admin/roles", "users") %>>查看角色用户</a></li>
     <% end -%>
   <% end -%>
+  <% if is_allow("admin/permissions", "index") %>
+   	<li><a href="<%= admin_permissions_path %>"<%= current_page("admin/permissions", "index") %>>权限列表</a></li>
+ 	<% end -%>
+  <% if is_allow("admin/permissions", "new") %>
+   	<li><a href="<%= new_admin_permission_path %>"<%= current_page("admin/permissions", "new", "create") %>>添加权限</a></li>
+  <% end -%>
+  <% if ["edit", "update"].index(params[:action]) && "admin/permissions" == controller.controller_path %>
+ 	  <% if is_allow("admin/permissions", "edit") %>
+   	  <li><a href="<%= edit_admin_permission_path(params[:id]) %>"<%= current_page("admin/permissions", "edit", "update") %>>修改权限</a></li>
+    <% end -%>
+  <% end -%>
 </ul>

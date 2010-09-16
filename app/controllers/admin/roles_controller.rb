@@ -2,6 +2,7 @@ class Admin::RolesController < Admin::ApplicationController
   def index
     @roles = initialize_grid(Role,
       :per_page => Setting.page_size.to_i,
+      :include => [:users],
       :order => "id")
   end
 
@@ -44,6 +45,18 @@ class Admin::RolesController < Admin::ApplicationController
     redirect_to admin_roles_path
   end
 
-  def users
+  def users    
+    @role = Role.find(params[:id])
+    @users = User.employees
+  end
+  
+  def update_users
+    @role = Role.find(params[:id])
+    if @role.users = params[:users].blank? ? [] : User.find(params[:users])
+      success_notice "角色分配成功!"
+    else
+      error_notice "角色分配失败!"
+    end
+    redirect_to admin_roles_path
   end
 end

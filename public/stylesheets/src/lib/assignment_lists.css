@@ -1,0 +1,11 @@
+.wal_filter {
+  padding-right: 16px; 
+  background-image: url(/images/icons/wal_edit.png);
+  background-repeat: no-repeat; 
+  background-position:  center right;
+}
+
+.wal_filter_spinner {
+  background-image: url(/images/icons/wal_spinner.gif);
+}
+table {width:100%;}

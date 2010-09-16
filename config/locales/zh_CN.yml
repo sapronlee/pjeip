@@ -137,6 +137,8 @@ zh_CN:
       user_profile: "用户信息"
       group: "部门信息"
       position: "职称信息"
+      role: "角色信息"
+      permission: "权限信息"
     attributes:
       user:
         login: "用户名"
@@ -156,6 +158,13 @@ zh_CN:
         name: "部门名"
       position:
         name: "职称名"
+      role: 
+        name: "角色名"
+        description: "说明"
+      permission:
+        name: "权限名"
+        controller_name: "控制器名"
+        action_name: "动作名"
 
 
   activemodel:
@@ -186,6 +195,13 @@ zh_CN:
         name: "部门名"
       position:
         name: "职称名"
+      roles:
+        name: "角色名"
+        description: "说明"
+      permission:
+        name: "权限名"
+        controller_name: "控制器名"
+        action_name: "动作名"
     actions:
       create: "创建"
       update: "修改"

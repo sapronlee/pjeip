@@ -4,11 +4,16 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :profile
   set_inheritance_column 'object_type'
   
+  named_scope :employees, {:conditions => ['object_type = "User"'], :include => [:profile]}
+  
   acts_as_authentic do |c|
     c.logged_in_timeout = 1.minutes
   end
 
-
+  def full_name
+    "#{self.login}(#{self.profile.name})"
+  end
+  
   def permissions
     user_permissions = []
     self.roles.each do |role|

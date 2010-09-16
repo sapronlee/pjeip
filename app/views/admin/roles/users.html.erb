@@ -1,3 +1,19 @@
+<% content_for :styles do %>
+  <%= stylesheet_link_tag "src/admin/roles/users", "src/lib/assignment_lists" %>
+<% end -%>
+<% content_for :scripts do %>
+  <%= javascript_include_tag "src/lib/assignment_lists_jquery" %>
+<% end -%>
 <div class="submenu">
   <%= render :partial => "menu" %>
 </div>
+<%= notice_message %>
+<h6>管理在<span class="red"><%= @role.name if @role %></span>角色下的用户列表:</h6>
+<% form_tag update_users_admin_role_path, :method =>:put do %>
+  <%= assignment_lists(:users, @users, @role.users,
+    :method_to_retrieve_object_name => :full_name,
+    :label1 => '所有用户',
+    :label2 => "所属<span class=\"red\">#{@role.name}</span>的用户") -%>
+  <%= submit_tag '修改', :class => "btn_update" %>
+<% end %>
+<p>注意:选择的时候按住shift可以实现多选</p>

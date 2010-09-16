@@ -53,7 +53,10 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :groups
     admin.resources :positions
     admin.resources :roles, 
-      :member => { :users => :get, :update_users => :put }
+      :member => { :users => :get, 
+                   :update_users => :put, 
+                   :permissions => :get, 
+                   :update_permissions => :put }
     admin.resources :permissions
   end
 

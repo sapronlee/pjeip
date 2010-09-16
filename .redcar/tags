@@ -1,4 +1,4 @@
-1284628472
+1284630824
 AES256	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/crypto_providers/aes256.rb	    class AES256
 AES256Test	/home/lboli/Site/pjeip/vendor/plugins/authlogic/test/crypto_provider_test/aes256_test.rb	  class AES256Test 
 AUTHLOGIC_PATH	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic.rb	AUTHLOGIC_PATH =
@@ -1457,6 +1457,7 @@ per_page	/home/lboli/Site/pjeip/vendor/plugins/will_paginate/lib/will_paginate/c
 per_page	/home/lboli/Site/pjeip/vendor/plugins/will_paginate/test/fixtures/developer.rb	  def self.per_page
 perishable_token_valid_for	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/perishable_token.rb	        alias_method :perishable_token_valid_for
 perishable_token_valid_for	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/perishable_token.rb	        def perishable_token_valid_for
+permissions	/home/lboli/Site/pjeip/app/controllers/admin/roles_controller.rb	  def permissions
 permissions	/home/lboli/Site/pjeip/app/models/user.rb	  def permissions
 persist	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/session/callbacks.rb	        def persist
 persist_by_cookie	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/session/cookies.rb	          def persist_by_cookie
@@ -2072,6 +2073,7 @@ update	/home/lboli/Site/pjeip/app/controllers/admin/positions_controller.rb	  de
 update	/home/lboli/Site/pjeip/app/controllers/admin/roles_controller.rb	  def update
 update	/home/lboli/Site/pjeip/app/controllers/admin/users_controller.rb	  def update
 update_info	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/session/magic_columns.rb	          def update_info
+update_permissions	/home/lboli/Site/pjeip/app/controllers/admin/roles_controller.rb	  def update_permissions
 update_session	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/session/session.rb	          def update_session
 update_sessions	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/session_maintenance.rb	          def update_sessions
 update_sessions?	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/session_maintenance.rb	          def update_sessions?

@@ -14,11 +14,16 @@
   g.column :column_name => "角色名", :attribute_name => "name"
   g.column :column_name => "描述", :attribute_name => "description", :no_filter => true,
     :class => "text_left" do |c|
-    truncate(c.description, :length => 44)
+    truncate(c.description, :length => 30)
   end
   if is_allow("admin/roles", "users")
     g.column :column_name => "用户(数)", :class => "action" do |c|
       link_to("用户(#{c.users.size})", users_admin_role_path(c))
+    end
+  end
+  if is_allow("admin/roles", "permissions")
+    g.column :column_name => "权限", :class => "action" do |c|
+      link_to("授权", permissions_admin_role_path(c))
     end
   end
   if is_allow("admin/roles", "edit")

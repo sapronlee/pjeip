@@ -1,0 +1,34 @@
+<% content_for :styles do %>
+  <%= stylesheet_link_tag "src/lib/wice_grid", "src/admin/roles/permissions" %>
+<% end -%>
+<div class="submenu">
+  <%= render :partial => "menu" %>
+</div>
+<%= notice_message %>
+<h6>管理<span class="red"><<%= @role.name if @role %>></span>角色的权限分配:</h6>
+<% form_tag update_permissions_admin_role_path, :method =>:put do %>
+<div class="wice_grid_container" id="grid">
+  <table class="wice_grid">
+    <thead>
+      <tr class="wice_grid_title_row">
+        <th></th>
+        <th>浏览</th>
+        <th>添加</th>
+        <th>修改</th>
+        <th>删除</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>人事系统</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>修改</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<% end -%>

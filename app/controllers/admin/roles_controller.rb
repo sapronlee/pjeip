@@ -45,6 +45,7 @@ class Admin::RolesController < Admin::ApplicationController
     redirect_to admin_roles_path
   end
 
+  #角色添加用户
   def users    
     @role = Role.find(params[:id])
     @users = User.employees
@@ -58,5 +59,14 @@ class Admin::RolesController < Admin::ApplicationController
       error_notice "角色分配失败!"
     end
     redirect_to admin_roles_path
+  end
+  
+  def permissions
+    @role = Role.find(params[:id])
+    @permissions = @role.permissions
+  end
+  
+  def update_permissions
+    
   end
 end

@@ -12,7 +12,7 @@
   <% end -%>
   <% if ["users"].index(params[:action]) && "admin/roles" == controller.controller_path %>
  	  <% if is_allow("admin/roles", "users") %>
-   	  <li><a href="<%= users_admin_role_path(params[:id]) %>"<%= current_page("admin/roles", "users") %>>查看角色用户</a></li>
+   	  <li><a href="<%= users_admin_role_path(params[:id]) %>"<%= current_page("admin/roles", "users") %>>分配用户</a></li>
     <% end -%>
   <% end -%>
   <% if is_allow("admin/permissions", "index") %>
@@ -24,6 +24,11 @@
   <% if ["edit", "update"].index(params[:action]) && "admin/permissions" == controller.controller_path %>
  	  <% if is_allow("admin/permissions", "edit") %>
    	  <li><a href="<%= edit_admin_permission_path(params[:id]) %>"<%= current_page("admin/permissions", "edit", "update") %>>修改权限</a></li>
+    <% end -%>
+  <% end -%>
+  <% if ["permissions"].index(params[:action]) && "admin/roles" == controller.controller_path %>
+ 	  <% if is_allow("admin/roles", "users") %>
+   	  <li><a href="<%= permissions_admin_role_path(params[:id]) %>"<%= current_page("admin/roles", "permissions") %>>角色授权</a></li>
     <% end -%>
   <% end -%>
 </ul>

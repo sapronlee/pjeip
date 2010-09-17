@@ -63,7 +63,8 @@ class Admin::RolesController < Admin::ApplicationController
   
   def permissions
     @role = Role.find(params[:id])
-    @permissions = @role.permissions
+    @permissions = Permission.collect_permissions
+    @role_permissions = @role.permissions
   end
   
   def update_permissions

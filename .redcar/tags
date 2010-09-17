@@ -1,4 +1,4 @@
-1284630824
+1284717746
 AES256	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/crypto_providers/aes256.rb	    class AES256
 AES256Test	/home/lboli/Site/pjeip/vendor/plugins/authlogic/test/crypto_provider_test/aes256_test.rb	  class AES256Test 
 AUTHLOGIC_PATH	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic.rb	AUTHLOGIC_PATH =
@@ -232,6 +232,8 @@ Developer	/home/lboli/Site/pjeip/vendor/plugins/will_paginate/test/fixtures/deve
 DummyController	/home/lboli/Site/pjeip/vendor/plugins/will_paginate/test/lib/view_test_process.rb	class DummyController
 DummyRequest	/home/lboli/Site/pjeip/vendor/plugins/will_paginate/test/lib/view_test_process.rb	class DummyRequest
 EXCEPT_ACTION	/home/lboli/Site/pjeip/app/models/enum.rb	  EXCEPT_ACTION =
+EXCEPT_CONTROLLER	/home/lboli/Site/pjeip/app/models/enum.rb	  EXCEPT_CONTROLLER =
+EXCEPT_PERMISSION_ACTION	/home/lboli/Site/pjeip/app/models/enum.rb	  EXCEPT_PERMISSION_ACTION =
 Email	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/email.rb	    module Email
 EmailTest	/home/lboli/Site/pjeip/vendor/plugins/authlogic/test/acts_as_authentic_test/email_test.rb	  class EmailTest 
 Employee	/home/lboli/Site/pjeip/vendor/plugins/authlogic/test/libs/employee.rb	class Employee 
@@ -411,6 +413,7 @@ NotActivatedError	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/
 Object	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/wice_grid_core_ext.rb	class Object 
 ObjectWithoutStringRepresentation	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/test/wice_grid_test.rb	class ObjectWithoutStringRepresentation
 OutputBuffer	/home/lboli/Site/pjeip/vendor/plugins/formtastic/spec/support/output_buffer.rb	  class OutputBuffer 
+PERMISSION_ACTIONS	/home/lboli/Site/pjeip/app/models/enum.rb	  PERMISSION_ACTIONS =
 Params	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/session/params.rb	    module Params
 ParamsTest	/home/lboli/Site/pjeip/vendor/plugins/authlogic/test/session_test/params_test.rb	  module ParamsTest
 Password	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/password.rb	    module Password
@@ -761,6 +764,7 @@ check_passwords_against_database	/home/lboli/Site/pjeip/vendor/plugins/authlogic
 check_passwords_against_database?	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/password.rb	            def check_passwords_against_database?
 close	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/wice_grid_spreadsheet.rb	    def close
 collect_deprecations	/home/lboli/Site/pjeip/vendor/plugins/will_paginate/test/helper.rb	  def collect_deprecations
+collect_permissions	/home/lboli/Site/pjeip/app/models/permission.rb	  def self.collect_permissions
 column	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/grid_renderer.rb	    def column
 column_for	/home/lboli/Site/pjeip/vendor/plugins/formtastic/lib/formtastic.rb	      def column_for
 column_labels	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/grid_renderer.rb	    def column_labels
@@ -901,6 +905,7 @@ disable_perishable_token_maintenance	/home/lboli/Site/pjeip/vendor/plugins/authl
 disable_perishable_token_maintenance?	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/perishable_token.rb	          def disable_perishable_token_maintenance?
 display_gender	/home/lboli/Site/pjeip/app/helpers/admin/users_helper.rb	  def display_gender
 display_leave_date	/home/lboli/Site/pjeip/app/helpers/admin/users_helper.rb	  def display_leave_date
+display_permission	/home/lboli/Site/pjeip/app/helpers/admin/roles_helper.rb	  def display_permission
 distinct_values_for_column	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/wice_grid.rb	    def distinct_values_for_column
 distinct_values_for_column_in_resultset	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/wice_grid.rb	    def distinct_values_for_column_in_resultset
 dom_loaded	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/js_adaptors/jquery_adaptor.rb	      def dom_loaded

@@ -4,7 +4,7 @@ class Enum
   
   EXCEPT_CONTROLLER = ["home","admin/home"]
   
-  EXCEPT_PERMISSION_ACTION = ["update","create", "users", "permissions"]
+  EXCEPT_PERMISSION_ACTION = ["update", "create", "update_users", "update_permissions"]
   
   PERMISSION_ACTIONS = ["index", "show", "new", "edit", "destory"]
 

@@ -64,10 +64,17 @@ class Admin::RolesController < Admin::ApplicationController
   def permissions
     @role = Role.find(params[:id])
     @permissions = Permission.collect_permissions
-    @role_permissions = @role.permissions
+    @role_permissions = @role.permissions.all
   end
   
-  def update_permissions
-    
+  def update_permissions    
+    params[:role][:permission_ids] ||= []   
+    @role = Role.find(params[:id])    
+    if @role.update_attributes(params[:role])
+      success_notice "权限分配成功!"
+    else
+      error_notice "权限分配失败"
+    end
+    redirect_to admin_roles_path
   end
 end

@@ -6,31 +6,24 @@
 </div>
 <%= notice_message %>
 <h6>管理<span class="red"><<%= @role.name if @role %>></span>角色的权限分配:</h6>
-<div class="wice_grid_container" id="grid">
-  <table class="wice_grid">
-    <thead>
-      <tr class="wice_grid_title_row">
-        <th>模块</th>
-        <th>列表</th>
-        <th>浏览</th>
-        <th>添加</th>
-        <th>修改</th>
-        <th>删除</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @permissions.each do |key, value| %>
-      <tr>
-        <td><%= key %></td>
-        <td><%= value.detect { |p| p.action_name == "index" } ? "true" : "false" %></td>
-        <td><%= display_permission(value, "show")%></td>
-        <td><%= display_permission(value, "new")%></td>
-        <td><%= display_permission(value, "edit")%></td>
-        <td><%= display_permission(value, "destroy")%></td>
-        <td></td>
-      </tr>
-    <% end -%>
-    </tbody>
-  </table>
-</div>
+
+
+<% form_for @role, :url => update_permissions_admin_role_path do |f| %>
+  <%= hidden_field_tag "role[permission_ids][]", "" %>
+  <% @permissions.each do |key, value| %>
+    <div class="item">
+      <span><%= display_permission_group_name(key) %></span>
+      <ul class="permission_list">
+        <% value.each do |p| %>
+          <li>
+            <%= check_box_tag "role[permission_ids][]", p.id, @role_permissions.include?(p), :id => "role_permission_ids_#{p.id}" %>
+            <%= label_tag "role_permission_ids_#{p.id}", display_permission_name(p.action_name) %>
+          </li>
+        <% end -%>
+      </ul>
+    </div> 
+  <% end -%>
+  <div class="item">
+    <%= f.submit "保存" %>
+  </div>
+<% end -%>

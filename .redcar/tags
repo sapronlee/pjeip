@@ -1,4 +1,4 @@
-1284717746
+1284890585
 AES256	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/crypto_providers/aes256.rb	    class AES256
 AES256Test	/home/lboli/Site/pjeip/vendor/plugins/authlogic/test/crypto_provider_test/aes256_test.rb	  class AES256Test 
 AUTHLOGIC_PATH	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic.rb	AUTHLOGIC_PATH =
@@ -905,7 +905,8 @@ disable_perishable_token_maintenance	/home/lboli/Site/pjeip/vendor/plugins/authl
 disable_perishable_token_maintenance?	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/perishable_token.rb	          def disable_perishable_token_maintenance?
 display_gender	/home/lboli/Site/pjeip/app/helpers/admin/users_helper.rb	  def display_gender
 display_leave_date	/home/lboli/Site/pjeip/app/helpers/admin/users_helper.rb	  def display_leave_date
-display_permission	/home/lboli/Site/pjeip/app/helpers/admin/roles_helper.rb	  def display_permission
+display_permission_group_name	/home/lboli/Site/pjeip/app/helpers/admin/roles_helper.rb	  def display_permission_group_name
+display_permission_name	/home/lboli/Site/pjeip/app/helpers/admin/roles_helper.rb	  def display_permission_name
 distinct_values_for_column	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/wice_grid.rb	    def distinct_values_for_column
 distinct_values_for_column_in_resultset	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/wice_grid.rb	    def distinct_values_for_column_in_resultset
 dom_loaded	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/js_adaptors/jquery_adaptor.rb	      def dom_loaded
@@ -2129,6 +2130,7 @@ verify_password_method	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authl
 view_helper_finished	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/wice_grid.rb	    attr_accessor :output_buffer, :view_helper_finished
 visible_page_numbers	/home/lboli/Site/pjeip/vendor/plugins/will_paginate/lib/will_paginate/view_helpers.rb	    def visible_page_numbers
 warn	/home/lboli/Site/pjeip/vendor/plugins/will_paginate/lib/will_paginate.rb	    def self.warn
+warp_action	/home/lboli/Site/pjeip/app/controllers/application_controller.rb	  def warp_action
 warring	/home/lboli/Site/pjeip/lib/core_extensions/logger.rb	    def warring
 wg_generate_conditions	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/wice_grid.rb	    def wg_generate_conditions
 wg_initialize_request_parameters	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/wice_grid.rb	    def wg_initialize_request_parameters

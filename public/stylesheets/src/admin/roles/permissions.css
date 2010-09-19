@@ -1,2 +1,9 @@
-h6 {margin-bottom:10px;}
+h6 {margin-bottom:20px;}
 .red {color:#bf0000;padding:0 3px;}
+
+.item {margin:10px;margin-bottom:20px;}
+  .item span {padding-bottom:5px;display:block;font-weight:bold;}
+  .item ul {padding-left:10px;}
+    .item ul li {display:inline-block;padding-right:10px;height:25px;position: relative;width:100px;}
+    .item ul li label {position:absolute;left:20px;top:4px;}
+    .item input[type="submit"] {padding:5px 15px;}

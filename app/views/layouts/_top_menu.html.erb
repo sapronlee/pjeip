@@ -1,9 +1,7 @@
 <ul>
-		<% if is_allow("home", "index") %>
-			<li><a href="<%= root_path %>"<%= current_page("home") %>>首页</a></li>
-		<% end -%>
+		<li><a href="<%= root_path %>"<%= current_page("home") %>>我的首页</a></li>
 		<% if is_allow("admin/users", "index") || is_allow("admin/groups", "index") || is_allow("admin/positions", "index") %>
-			<li><a href="<%= admin_users_path %>"<%= current_page(["admin/users", "admin/groups", "admin/positions"]) %>>人事</a></li>
+			<li><a href="<%= admin_users_path %>"<%= current_page(["admin/users", "admin/groups", "admin/positions"]) %>>人事管理</a></li>
 		<% end -%>
 		<% if is_allow("admin/roles", "index") || is_allow("admin/permissions", "index") %>
 			<li><a href="<%= admin_roles_path %>"<%= current_page(["admin/roles", "admin/permissions"]) %>>角色权限</a></li>

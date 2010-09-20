@@ -5,11 +5,13 @@ class Admin::UsersController < Admin::ApplicationController
       :conditions => ["object_type = ?", "User"],
       :order => "id",
       :include => [:profile])
+    set_seo_meta "人事列表"
   end
   
   def new
     @user = User.new
     @user.build_profile
+    set_seo_meta "添加人员"
     render :action => :edit
   end
 
@@ -26,6 +28,7 @@ class Admin::UsersController < Admin::ApplicationController
 
   def edit
     @user = User.find params[:id]
+    set_seo_meta "修改人员"
   end
 
   def update

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
   before_filter :require_user, :except => [:login, :login_user] #登录
-  before_filter :auth_permission, :except => [:login, :login_user, :logout] #权限
+  before_filter :auth_permission, :except => [:login, :login_user, :logout, :index] #权限
 
 
   private
@@ -81,17 +81,30 @@ class ApplicationController < ActionController::Base
   
   # 权限验证
   def auth_permission
-    unless current_user.admin?
-      user_permissions = current_user.permissions
-      unless user_permissions.detect { |p| p.controller_name == controller_path && p.action_name == action_name }
-        redirect_403
-        return false
-      end
+    return true if current_user.admin?
+    user_permissions = current_user.permissions
+       
+    unless user_permissions.detect { |p| p.controller_name == controller_path && warp_action(p.action_name).index(p.action_name)}
+      redirect_403
+      return false
     end
   end
   
   def redirect_403
     redirect_to "/403.html"
+  end
+  
+  def warp_action(action_name)
+    result = case action_name
+      when 'new', 'create' then ['new', 'create']
+      when 'edit', 'update' then ['edit', 'update']
+      when 'index', 'show' then ['index', 'show']
+      when 'users', 'update_users' then ['users', 'update_users']
+      when 'permissions', 'update_permissions' then ['permissions', 'update_permissions']
+      else
+        action_name.to_a
+    end
+    return result    
   end
 
 end

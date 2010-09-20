@@ -7,4 +7,8 @@ class Position < ActiveRecord::Base
   def self.to_array
     Position.find(:all).collect { |p| [p.name, p.id] }
   end
+  
+  def to_s
+    self.name unless self.blank?
+  end
 end

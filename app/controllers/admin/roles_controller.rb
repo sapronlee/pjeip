@@ -4,15 +4,18 @@ class Admin::RolesController < Admin::ApplicationController
       :per_page => Setting.page_size.to_i,
       :include => [:users],
       :order => "id")
+    set_seo_meta "角色列表"
   end
 
   def new 
     @role = Role.new
+    set_seo_meta "添加角色"
     render :action => :edit
   end
 
   def edit
     @role = Role.find params[:id]
+    set_seo_meta "修改角色"
   end
 
   def create
@@ -49,6 +52,7 @@ class Admin::RolesController < Admin::ApplicationController
   def users    
     @role = Role.find(params[:id])
     @users = User.employees
+    set_seo_meta "用户分配角色"
   end
   
   def update_users
@@ -64,10 +68,18 @@ class Admin::RolesController < Admin::ApplicationController
   def permissions
     @role = Role.find(params[:id])
     @permissions = Permission.collect_permissions
-    @role_permissions = @role.permissions
+    @role_permissions = @role.permissions.all
+    set_seo_meta "角色分配权限"
   end
   
-  def update_permissions
-    
+  def update_permissions    
+    params[:role][:permission_ids] ||= []   
+    @role = Role.find(params[:id])    
+    if @role.update_attributes(params[:role])
+      success_notice "权限分配成功!"
+    else
+      error_notice "权限分配失败"
+    end
+    redirect_to admin_roles_path
   end
 end

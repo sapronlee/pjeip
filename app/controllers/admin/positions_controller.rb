@@ -4,15 +4,18 @@ class Admin::PositionsController < Admin::ApplicationController
       :per_page => Setting.page_size.to_i,
       :order => "id",
       :include => [:user_profiles])
+    set_seo_meta "职称列表"
   end
 
   def new
     @position = Position.new
+    set_seo_meta "添加职称"
     render :action => :edit
   end
 
   def edit
     @position = Position.find params[:id]
+    set_seo_meta "修改职称"
   end
 
   def create

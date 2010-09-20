@@ -7,4 +7,8 @@ class Group < ActiveRecord::Base
   def self.to_array
     Group.find(:all).collect { |g| [g.name, g.id] }
   end
+  
+  def to_s
+    self.name unless self.blank?
+  end
 end

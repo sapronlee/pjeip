@@ -1,0 +1,6 @@
+#function_warp {margin:10px 0;}
+  #function_warp ul li {float:left;padding-right:20px;}
+    #function_warp ul li a {padding-left:20px;background: url(/images/clear.png) no-repeat top left;
+      display:block;padding-top:3px;padding-bottom:3px;}
+      #function_warp ul li a.generate {background-image: url(/images/generate.png);}
+  

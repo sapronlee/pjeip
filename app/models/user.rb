@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   end
 
   def to_s
-    self.admin? ? self.login : self.profile.name
+    self.admin? ? "#{self.login} 超级管理员" : "#{self.profile.name}  所属部门: #{self.profile.group} 职称: #{self.profile.position}"
   end
   
   def admin?

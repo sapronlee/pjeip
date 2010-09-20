@@ -18,4 +18,8 @@ class Permission < ActiveRecord::Base
     end
     return permissions
   end
+  
+  def self.clear
+    ActiveRecord::Base.connection.execute("TRUNCATE TABLE `permissions`")  
+  end
 end

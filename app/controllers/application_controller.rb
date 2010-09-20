@@ -83,7 +83,7 @@ class ApplicationController < ActionController::Base
   def auth_permission
     unless current_user.admin?
       user_permissions = current_user.permissions
-      unless user_permissions.detect { |p| p.controller_name == controller_path && p.action_name == action_name}
+      unless user_permissions.detect { |p| p.controller_name == controller_path && p.action_name == action_name }
         redirect_403
         return false
       end

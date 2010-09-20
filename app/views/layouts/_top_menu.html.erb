@@ -6,7 +6,7 @@
 			<li><a href="<%= admin_users_path %>"<%= current_page(["admin/users", "admin/groups", "admin/positions"]) %>>人事</a></li>
 		<% end -%>
 		<% if is_allow("admin/roles", "index") || is_allow("admin/permissions", "index") %>
-			<li><a href="<%= admin_roles_path %>"<%= current_page("admin/roles") %>>角色权限</a></li>
+			<li><a href="<%= admin_roles_path %>"<%= current_page(["admin/roles", "admin/permissions"]) %>>角色权限</a></li>
 		<% end -%>
 </ul>
 

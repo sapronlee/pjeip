@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
   before_filter :require_user, :except => [:login, :login_user] #登录
-  before_filter :auth_permission, :except => [:login, :login_user, :logout] #权限
+  before_filter :auth_permission, :except => [:login, :login_user, :logout, :index] #权限
 
 
   private

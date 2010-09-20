@@ -4,15 +4,18 @@ class Admin::GroupsController < Admin::ApplicationController
       :per_page => Setting.page_size.to_i,
       :order => "id",
       :include => [:user_profiles])
+    set_seo_meta "部门列表"
   end
 
   def new
     @group = Group.new
+    set_seo_meta "添加部门"
     render :action => :edit
   end
 
   def edit
     @group = Group.find params[:id]
+    set_seo_meta "修改部门"
   end
 
   def create

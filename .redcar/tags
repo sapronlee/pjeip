@@ -1,4 +1,4 @@
-1284890585
+1284976128
 AES256	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/crypto_providers/aes256.rb	    class AES256
 AES256Test	/home/lboli/Site/pjeip/vendor/plugins/authlogic/test/crypto_provider_test/aes256_test.rb	  class AES256Test 
 AUTHLOGIC_PATH	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic.rb	AUTHLOGIC_PATH =
@@ -762,6 +762,8 @@ check_boxes_input	/home/lboli/Site/pjeip/vendor/plugins/formtastic/lib/formtasti
 check_passwords_against_database	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/password.rb	        alias_method :check_passwords_against_database
 check_passwords_against_database	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/password.rb	        def check_passwords_against_database
 check_passwords_against_database?	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/acts_as_authentic/password.rb	            def check_passwords_against_database?
+clear	/home/lboli/Site/pjeip/app/controllers/admin/permissions_controller.rb	  def clear
+clear	/home/lboli/Site/pjeip/app/models/permission.rb	  def self.clear
 close	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/wice_grid_spreadsheet.rb	    def close
 collect_deprecations	/home/lboli/Site/pjeip/vendor/plugins/will_paginate/test/helper.rb	  def collect_deprecations
 collect_permissions	/home/lboli/Site/pjeip/app/models/permission.rb	  def self.collect_permissions
@@ -1030,6 +1032,7 @@ gem_version	/home/lboli/Site/pjeip/config/boot.rb	      def gem_version
 generalize_credentials_error_messages	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/session/password.rb	        alias_method :generalize_credentials_error_messages
 generalize_credentials_error_messages	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/session/password.rb	        def generalize_credentials_error_messages
 generalize_credentials_error_messages?	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/session/password.rb	          def generalize_credentials_error_messages?
+generate	/home/lboli/Site/pjeip/app/controllers/admin/permissions_controller.rb	  def generate
 generate_association_input_name	/home/lboli/Site/pjeip/vendor/plugins/formtastic/lib/formtastic.rb	      def generate_association_input_name
 generate_blank_slate	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/helpers/wice_grid_view_helpers.rb	    def generate_blank_slate
 generate_captcha_image	/home/lboli/Site/pjeip/vendor/plugins/captcha/lib/captcha_image_generator.rb	  def self.generate_captcha_image
@@ -1037,6 +1040,7 @@ generate_conditions	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/wice_gri
 generate_conditions	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/wice_grid.rb	    def generate_conditions
 generate_conditions	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/wice_grid.rb	    def generate_conditions
 generate_html_id	/home/lboli/Site/pjeip/vendor/plugins/formtastic/lib/formtastic.rb	      def generate_html_id
+generate_permission	/home/lboli/Site/pjeip/lib/base_permissions/permissions.rb	    def generate_permission
 generated_conditions	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/table_column_matrix.rb	    attr_reader :generated_conditions
 get	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/table_column_matrix.rb	    alias_method :get
 get?	/home/lboli/Site/pjeip/vendor/plugins/will_paginate/test/lib/view_test_process.rb	  def get?
@@ -1234,6 +1238,7 @@ is	/home/lboli/Site/pjeip/vendor/plugins/formtastic/spec/inputs/radio_input_spec
 is	/home/lboli/Site/pjeip/vendor/plugins/formtastic/spec/semantic_errors_spec.rb	  describe 'when there is one error on base and options with class is 
 is	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/grid_renderer.rb	        raise WiceGridArgumentError.new("Option :model_class is 
 is_allow	/home/lboli/Site/pjeip/app/helpers/application_helper.rb	  def is_allow
+is_blank?	/home/lboli/Site/pjeip/lib/base_permissions/permissions.rb	    def is_blank?
 it_should_apply_custom_for_to_label_when_input_html_id_provided	/home/lboli/Site/pjeip/vendor/plugins/formtastic/spec/support/custom_macros.rb	    def it_should_apply_custom_for_to_label_when_input_html_id_provided
 it_should_apply_custom_input_attributes_when_input_html_provided	/home/lboli/Site/pjeip/vendor/plugins/formtastic/spec/support/custom_macros.rb	    def it_should_apply_custom_input_attributes_when_input_html_provided
 it_should_apply_error_logic_for_input_type	/home/lboli/Site/pjeip/vendor/plugins/formtastic/spec/support/custom_macros.rb	    def it_should_apply_error_logic_for_input_type
@@ -1545,6 +1550,8 @@ render_standard_filter_internal	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/
 render_wice_grid_view	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/test/wice_grid_functional_test.rb	  def render_wice_grid_view
 renderer	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/wice_grid.rb	    attr_writer :renderer
 replace	/home/lboli/Site/pjeip/vendor/plugins/will_paginate/lib/will_paginate/collection.rb	    def replace
+replace_action	/home/lboli/Site/pjeip/lib/base_permissions/permissions.rb	    def replace_action
+replace_controller	/home/lboli/Site/pjeip/lib/base_permissions/permissions.rb	    def replace_controller
 request	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/controller_adapters/abstract_adapter.rb	      def request
 request	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/controller_adapters/sinatra_adapter.rb	        attr_reader :request, :response
 request	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/controller_adapters/sinatra_adapter.rb	        attr_reader :request, :response, :cookies
@@ -2037,6 +2044,8 @@ to_key	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/session/fou
 to_label	/home/lboli/Site/pjeip/vendor/plugins/formtastic/spec/spec_helper.rb	    def to_label
 to_model	/home/lboli/Site/pjeip/vendor/plugins/authlogic/lib/authlogic/session/active_record_trickery.rb	        def to_model
 to_parameter_name	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/wice_grid_core_ext.rb	  def to_parameter_name
+to_s	/home/lboli/Site/pjeip/app/models/group.rb	  def to_s
+to_s	/home/lboli/Site/pjeip/app/models/position.rb	  def to_s
 to_s	/home/lboli/Site/pjeip/app/models/user.rb	  def to_s
 to_s	/home/lboli/Site/pjeip/vendor/plugins/wice_grid/lib/grid_output_buffer.rb	    def to_s
 total_entries	/home/lboli/Site/pjeip/vendor/plugins/will_paginate/lib/will_paginate/collection.rb	    attr_reader :current_page, :per_page, :total_entries, :total_pages

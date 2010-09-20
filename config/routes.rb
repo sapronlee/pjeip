@@ -57,7 +57,9 @@ ActionController::Routing::Routes.draw do |map|
                    :update_users => :put, 
                    :permissions => :get, 
                    :update_permissions => :put }
-    admin.resources :permissions
+    admin.resources :permissions,
+      :collection => { :generate => :get,
+                       :clear => :get }
   end
 
   map.connect ':controller/:action/:id'

@@ -1,5 +1,5 @@
 <% content_for :styles do %>
-  <%= stylesheet_link_tag "src/lib/wice_grid" %>
+  <%= stylesheet_link_tag "src/lib/wice_grid", "src/admin/permissions/index" %>
 <% end %>
 
 <% content_for :scripts do %>
@@ -9,11 +9,19 @@
   <%= render :partial => "admin/roles/menu" %>
 </div>
 <%= notice_message %>
+<div id="function_warp">
+  <% if current_user.admin? %>
+    <ul class="clearfix">
+      <li><a class="p_clear" href="<%= clear_admin_permissions_path %>" title="清空权限数据库">清空</a></li>
+      <li><a class="generate" href="<%= generate_admin_permissions_path %>" title="重新生成权限数据库">重新生成</a></li>
+    </ul>
+  <% end -%>
+</div>
 <%= grid(@permissions) do |g|
-  g.column :column_name => "ID", :attribute_name => "id", :no_filter => true
-  g.column :column_name => "权限名", :attribute_name => "name"
+  g.column :column_name => "ID", :attribute_name => "id", :no_filter => true  
   g.column :column_name => "控制器名", :attribute_name => "controller_name"
   g.column :column_name => "动作名", :attribute_name => "action_name"
+  g.column :column_name => "权限地址", :attribute_name => "name", :class => "text_left"
   if is_allow("admin/permissions", "edit")
     g.column :column_name => "编辑", :class => "action" do |c|
       link_to("编辑", edit_admin_permission_path(c))

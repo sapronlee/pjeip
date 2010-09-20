@@ -22,7 +22,7 @@
 .wice_grid tr.wice_grid_filter_row th{
   background-color: #F0F0F0;
   padding:8px 4px;
-  border-left:1px solid #E0E0E0;
+  /*border-left:1px solid #E0E0E0;*/
 }
 
 
@@ -54,7 +54,7 @@
 
 .wice_grid td {
   padding:8px 4px;
-  border-left:1px solid #F0F0F0;
+  /*border-left:1px solid #F0F0F0;*/
 }
 
 .wice_grid td.text_left {text-align:left;line-height:150%;}
@@ -78,6 +78,9 @@
 
 .wice_grid tr.even td.active_filter  { background-color: #ddddff; }
 .wice_grid tr.odd td.active_filter  { background-color: #eeeeff; }
+
+/*mouseover*/
+.wice_grid tbody tr.selected { background:#DDD;}
 
 .wice_grid tr.even td.sorted { background-color: #ffffcc;width:50px; }
 .wice_grid tr.odd td.sorted { background-color: #ffffee; width:50px;}
@@ -172,5 +175,6 @@
   list-style-type: none;
   margin-left : 0px;
 }
+
 
 

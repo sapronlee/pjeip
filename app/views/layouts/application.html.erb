@@ -20,6 +20,14 @@
 	        $("#current_time").everyTime("1s", function() {
 	          $(this).empty().append(current_time);  
 	        });
+          $(".wice_grid tbody tr").hover(
+            function() {
+              $(this).addClass("selected");
+            },
+            function() {
+              $(this).removeClass("selected");
+            }
+          );
 	    });
 	  </script>
   </head>

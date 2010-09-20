@@ -2,4 +2,4 @@ log/*.log
 .DS_Store
 tmp/**/*
 config/database.yml
-.redcar
+.redcar/*

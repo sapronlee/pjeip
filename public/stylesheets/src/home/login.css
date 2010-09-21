@@ -4,7 +4,7 @@ html,body {height:100%;background-color:#F8FBF5;}
 	letter-spacing:1px;-webkit-border-top-left-radius:4px 4px;-webkit-border-top-right-radius:4px 4px;
 	-webkit-border-bottom-left-radius:4px 4px;-webkit-border-bottom-right-radius:4px 4px;}
 	#login h1 {padding:8px 0;padding-left:10px;font-size:20px;}
-	#login input[type="text"],#login input[type="password"] {width:250px;padding:3px 0;border:1px solid #555;margin:0;}
+	#login input[type="text"],#login input[type="password"] {width:230px;padding:3px 0;border:1px solid #555;margin:0;}
 	#login div.col {margin:10px 20px;}
 	#login label {display:inline-block;width:60px;text-align:right;height:20px;padding-right:10px;}
 	#login .checkbox {padding-left:70px;padding-right:40px;height:26px;position: relative;}
@@ -14,6 +14,9 @@ html,body {height:100%;background-color:#F8FBF5;}
 		#login .captcha {margin:10px 20px;}
 			#login .captcha #captcha {width:128px;}
   		#login .captcha img {margin-left:70px;width:130px;}
+  
+  #login #user_session_login, #login #user_session_password {background: url(/images/user.png) 2px 3px no-repeat;padding-left:20px;}
+  #login #user_session_password {background-image:url(/images/pwd.png);}
 
 div.errorExplanation {padding:10px;margin:0 10px;}
 

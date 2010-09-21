@@ -13,7 +13,7 @@ class Permission < ActiveRecord::Base
     end
     permissions.each_value do |values|
       values.delete_if do |p|
-        Enum::EXCEPT_PERMISSION_ACTION.include?(p.action_name)
+        Enum::EXCEPT_ACTION.include?(p.action_name)
       end
     end
     return permissions

@@ -55,8 +55,7 @@ class Admin::PermissionsController < Admin::ApplicationController
   
   def generate
     begin
-      Permission.transaction do
-        Permission.clear
+      Permission.transaction do        
         Utility.generate_permission
       end
     rescue

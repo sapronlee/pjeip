@@ -26,10 +26,10 @@ div.successMessage { font-size:12px; margin:10px 0; background:#ECFFC7;padding:1
     #top #logo {margin-top:15px;height:40px;width:369px;}
     #top #nav {height:25px;}
       #nav ul {height:25px;overflow:hidden;float:right;}
-        #nav ul li {float:left;background-color:#000;margin-left:6px;height:25px;}
-          #nav ul li a {display:block;padding:7px 10px 6px 10px;color:#FFF;}
-          #nav ul li a:hover {background-color:#FFF;color:#000;}
-          #nav ul li a.current {background-color:#FFF;color:#000;}
+        #nav ul li {float:left;background-color:#eaf3fc;margin-left:6px;height:25px;}
+          #nav ul li a {display:block;padding:7px 10px 6px 10px;color:#000;}
+          #nav ul li a:hover {background-color:#000;color:#FFF;}
+          #nav ul li a.current {background-color:#000;color:#FFF;}
   #header #sub_col {height:30px;background-color:#000;border-bottom:1px #999 solid;color:#FFF;overflow:hidden;}
     #sub_col .inner {width:960px;margin:0 auto;position:relative;height:30px;}
       #sub_col #current_time, #sub_col #current_user {position:absolute;top:9px;}

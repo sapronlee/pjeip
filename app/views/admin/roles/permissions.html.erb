@@ -1,13 +1,36 @@
 <% content_for :styles do %>
   <%= stylesheet_link_tag "src/lib/wice_grid", "src/admin/roles/permissions" %>
 <% end -%>
+<% content_for :scripts do %>
+<script type="text/javascript">
+$(document).ready(function() {
+  $(".item span").toggle(
+    function() {
+      $(this).next("ul").children().children(":checkbox").attr("checked", true);
+    },
+    function() {
+      $(this).next("ul").children().children(":checkbox").attr("checked", false);
+    }
+  );
+  $("#checked_all").click(function() {
+    if($(this).attr("checked") == true) {
+      $("form :checkbox").attr("checked", true);
+    }else {
+      $("form :checkbox").attr("checked", false);
+    }
+  });
+});
+</script>
+<% end %>
 <div class="submenu">
   <%= render :partial => "menu" %>
 </div>
 <%= notice_message %>
 <h6>管理<span class="red"><<%= @role.name if @role %>></span>角色的权限分配:</h6>
-
-
+<div class="function_warp">
+  <input id="checked_all" type="checkbox" />  
+  <label for="checked_all">全选</label>
+</div>
 <% form_for @role, :url => update_permissions_admin_role_path do |f| %>
   <%= hidden_field_tag "role[permission_ids][]", "" %>
   <% @permissions.each do |key, value| %>

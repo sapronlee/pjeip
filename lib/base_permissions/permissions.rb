@@ -22,7 +22,7 @@ module BasePermissions::Permissions
         next if Enum::EXCEPT_CONTROLLER.index(controller_class.controller_path)
         controller_class.action_methods.each do |action|
           next if Enum::EXCEPT_ACTION.index(action)
-          if p = is_blank?(controller_class.controller_path, action)            
+          if p = is_blank?("#{controller_class.controller_path}/#{action}")            
             p.controller_name = replace_controller(controller_class.controller_path)
             p.action_name = replace_action(action)
             p.name = "#{controller_class.controller_path}/#{action}"
@@ -53,8 +53,8 @@ module BasePermissions::Permissions
     end
     
     #检查权限
-    def is_blank?(controller_name, action_name)
-      if p = Permission.by_controller_action(controller_name, action_name).first    
+    def is_blank?(url)
+      if p = Permission.find_by_name(url)    
         return p
       else
         return false
@@ -76,7 +76,7 @@ module BasePermissions::Permissions
     
     def replace_action(action_name)
       result = case action_name
-      when "index" then "列表"
+      when "index" then "查看"
       when "edit" then "修改"
       when "new" then "添加"
       when "destroy" then "删除"

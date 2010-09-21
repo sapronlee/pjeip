@@ -47,5 +47,9 @@ class Admin::GroupsController < Admin::ApplicationController
     end
     redirect_to admin_groups_path
   end
+  
+  def show
+    
+  end
 
 end

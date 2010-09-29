@@ -60,6 +60,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :permissions,
       :collection => { :generate => :get,
                        :clear => :get }
+    admin.resource :settings
   end
 
   map.connect ':controller/:action/:id'

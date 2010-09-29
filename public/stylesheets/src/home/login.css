@@ -19,4 +19,5 @@ html,body {height:100%;background-color:#F8FBF5;}
   #login #user_session_password {background-image:url(/images/pwd.png);}
 
 div.errorExplanation {padding:10px;margin:0 10px;}
+div.successMessage {margin:10px;}
 

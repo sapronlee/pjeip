@@ -1,0 +1,6 @@
+body {font-family:tahoma;font-size:12px;}
+div.row {margin-bottom:10px;position: relative;}
+label {padding-right:10px;vertical-align:middle;}
+input[type="text"] {width:300px;border:1px solid #ccc;padding:3px 0;vertical-align:middle;}
+input[type="checkbox"] {vertical-align:middle;}
+input#settings_page_size {width:30px;}

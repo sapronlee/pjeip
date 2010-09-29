@@ -40,8 +40,8 @@ div.successMessage { font-size:12px; margin:10px 0; background:#ECFFC7;padding:1
 #main {margin:10px auto;}
   #main .submenu {margin-bottom:10px;}
   #main .submenu ul{width:100%;border-bottom:1px solid #336699;}
-    #main .submenu ul li {display:inline-block;margin-right:10px;}
-     #main .submenu ul li a {display:block;padding:5px 15px;background-color:#ccc;color:#333;}
+    #main .submenu ul li {margin-right:10px;float:left;}
+     #main .submenu ul li a {display:block;padding:5px 15px;background-color:#ccc;color:#333;float:left;}
      #main .submenu ul li a:hover {color:#FFF;background-color:#336699;}
      #main .submenu ul li a.current {font-size:14px;background-color:#336699;color:#FFF;}
 

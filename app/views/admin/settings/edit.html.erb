@@ -1,0 +1,24 @@
+<% content_for :styles do %>
+  <%= stylesheet_link_tag "src/admin/settings/edit" %>
+<% end %>
+<%= notice_message %>
+<% form_tag(admin_settings_path, :method => :put) do -%>
+<div class="row">
+  <%= label_tag "settings[web_name]", "网站名字" %>
+  <%= text_field_tag "settings[web_name]", Setting.web_name %>
+</div>
+<div class="row">
+  <%= label_tag "settings[web_description]", "网站描述" %>
+  <%= text_field_tag "settings[web_description]", Setting.web_description %>
+</div>
+<div class="row">
+<%= hidden_field_tag "settings[login_captcha]", "0" %>
+  <%= label_tag "settings[login_captcha]", "开启登录验证" %>
+  <%= check_box_tag "settings[login_captcha]", "1", Setting.login_captcha.to_bool %>
+</div>
+<div class="row">
+  <%= label_tag "settings[page_size]", "每页显示数" %>
+  <%= text_field_tag "settings[page_size]", Setting.page_size %>
+</div>
+  <%= submit_tag "保存" %>
+<% end -%>

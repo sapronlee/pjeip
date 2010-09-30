@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
   before_filter :require_user, :except => [:login, :login_user] #登录
-  before_filter :auth_permission, :except => [:login, :login_user, :logout, :index] #权限
+  before_filter :auth_permission #权限
 
 
   private
@@ -82,9 +82,8 @@ class ApplicationController < ActionController::Base
   # 权限验证
   def auth_permission
     return true if current_user.admin?
-    user_permissions = current_user.permissions
-       
-    unless user_permissions.detect { |p| p.controller == controller_path && warp_action(p.action).index(p.action)}
+    user_permissions = current_user.permissions    
+    unless user_permissions.detect { |p| p.controller == controller_path && warp_action(action_name).index(p.action)}
       redirect_403
       return false
     end

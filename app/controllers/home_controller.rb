@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  #before_filter :auth_permission, :except => [:index]
+  before_filter :auth_permission, :except => [:login, :login_user, :logout, :index]
   validates_captcha
 
   def index

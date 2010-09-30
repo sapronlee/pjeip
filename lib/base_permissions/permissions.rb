@@ -22,24 +22,20 @@ module BasePermissions::Permissions
         next if Enum::EXCEPT_CONTROLLER.index(controller_class.controller_path)
         controller_class.action_methods.each do |action|
           next if Enum::EXCEPT_ACTION.index(action)
-          if p = is_blank?("#{controller_class.controller_path}/#{action}")            
-            p.controller_name = replace_controller(controller_class.controller_path)
-            p.action_name = replace_action(action)
-            p.name = "#{controller_class.controller_path}/#{action}"
-            p.save
-          else
-            p = Permission.new
-            p.controller_name = replace_controller(controller_class.controller_path)
-            p.action_name = replace_action(action)
-            p.name = "#{controller_class.controller_path}/#{action}"
-            p.save
-          end
+          p = is_blank?("#{controller_class.controller_path}/#{action}")            
+          p.controller = controller_class.controller_path
+          p.action = action
+          p.controller_name = replace_controller(controller_class.controller_path)
+          p.action_name = replace_action(action)
+          p.name = "#{controller_class.controller_path}/#{action}"
+          p.save            
         end
       end 
     end
 
     
-    private   
+    private
+    #预先加载所有的controller和action
     def require_all_controllers(path = "#{[RAILS_ROOT]}/app/controllers")
       Dir.foreach(path) do |e|
         next if e =~ /^\./
@@ -54,13 +50,10 @@ module BasePermissions::Permissions
     
     #检查权限
     def is_blank?(url)
-      if p = Permission.find_by_name(url)    
-        return p
-      else
-        return false
-      end
+      p = Permission.find_or_initialize_by_name(url)          
     end
     
+    #替换controller_name
     def replace_controller(controller_name)
       result = case controller_name
       when "admin/users" then "人事模块"
@@ -68,12 +61,14 @@ module BasePermissions::Permissions
       when "admin/roles" then "角色模块"
       when "admin/groups" then "部门模块"
       when "admin/permissions" then "权限模块"
+      when "admin/settings" then "设置模块"
       else
           "未知模块"
         end
       return result
     end
     
+    #替换action_name
     def replace_action(action_name)
       result = case action_name
       when "index" then "查看"
@@ -86,7 +81,7 @@ module BasePermissions::Permissions
           "未知"
         end
       return result
-    end
+    end    
     
   end
 

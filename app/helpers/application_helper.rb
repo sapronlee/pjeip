@@ -18,7 +18,7 @@ module ApplicationHelper
 
   def is_allow(controller_name, action_name)
     return true if current_user.admin?
-    if current_user.permissions.detect { |p| p.controller_name == controller_name && p.action_name == action_name }
+    if current_user.permissions.detect { |p| p.controller == controller_name && p.action == action_name }
       return true
     else
       return false

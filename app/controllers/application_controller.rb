@@ -84,7 +84,7 @@ class ApplicationController < ActionController::Base
     return true if current_user.admin?
     user_permissions = current_user.permissions
        
-    unless user_permissions.detect { |p| p.controller_name == controller_path && warp_action(p.action_name).index(p.action_name)}
+    unless user_permissions.detect { |p| p.controller == controller_path && warp_action(p.action).index(p.action)}
       redirect_403
       return false
     end
